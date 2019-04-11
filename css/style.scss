@@ -1,0 +1,94 @@
+@import '_reset.scss';
+
+$colorbg_ht:#f1f0f0;
+$colorwhite:#fff;
+$colorblue:#00bff3;
+$colorblack:#000;
+$colorbrand:#f2f2f4;
+.wrapper{
+    margin: 0;
+    padding: 0;
+    .header-top{
+        background: $colorbg_ht;
+        padding: 7px 0;
+        span{
+            i{
+                display: inline;
+                background: $colorblue;
+                padding: 5px;
+                color: #fff;
+                border-radius: 3px;
+            }
+        }
+      }
+
+   .w-content{     
+       width: 100%;
+       max-width: 1200px;
+       margin: 0 auto;
+       display: flex;     
+       .col{
+           flex: 1;
+       } 
+   }
+   .menu-fast{
+       list-style: none;
+       li{
+           display: inline-block;
+           
+           a{
+               color: $colorblack;
+               font-size: 14px;
+               text-decoration: none;
+               border-left: 1px solid $colorblack;
+               margin: 0 5px;
+               i{
+                   margin-left: 5px;
+               }
+              &:hover{
+                  color: $colorblue;
+              }
+           }
+           
+       }
+   }
+}
+.pull-right{
+    float: right;
+}
+.header-midd{
+    background: #000;
+}
+
+// chú ý
+/* chú ý*/
+$name:content;
+$att_bg:background;
+div.#{$name}{
+    #{$att_bg}-color: #00bff3;
+    color: $colorwhite;
+}
+p {
+    color: hsl(0, 100%, 20%);
+  }
+  @mixin does-parent-exist {
+    @if & {
+      &:hover {
+        color: red;
+      }
+    } @else {
+      a {
+        color: red;
+      }
+    }
+  }
+  @include does-parent-exist;
+  @mixin sexy-border($color, $width) {
+    border: {
+      color: $color;
+      width: $width;
+      style: dashed;
+    }
+  }
+  
+  p { @include sexy-border(blue, 1in); }
